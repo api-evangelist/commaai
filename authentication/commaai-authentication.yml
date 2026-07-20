@@ -1,0 +1,37 @@
+generated: '2026-07-18'
+method: searched
+source: https://api.comma.ai
+docs: https://api.comma.ai
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  bearer_format: JWT
+  token_issuer: https://jwt.comma.ai
+notes: >-
+  The comma connect API authenticates with a JSON Web Token passed in the
+  Authorization header as `Authorization: JWT {token}` (a `JWT` auth-scheme
+  keyword rather than `Bearer`). Tokens are minted at jwt.comma.ai. Devices
+  running openpilot authenticate separately via POST /v2/pilotauth/ to obtain
+  a device (dongle) token. There is no documented OAuth 2.0 authorization-code
+  flow or scopes reference; access to a device is granted per-user via
+  add_user / del_user on the device.
+schemes:
+- name: connectJWT
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  in: header
+  parameter: Authorization
+  value_format: 'JWT {token}'
+  token_url: https://jwt.comma.ai
+  sources:
+  - https://api.comma.ai
+- name: pilotDeviceAuth
+  type: http
+  scheme: bearer
+  bearer_format: JWT
+  description: Device authentication for openpilot units via POST /v2/pilotauth/.
+  sources:
+  - https://api.comma.ai
