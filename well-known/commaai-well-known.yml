@@ -1,0 +1,35 @@
+generated: '2026-07-18'
+method: searched
+source: live probes of /.well-known/* across comma hosts
+notes: >-
+  No genuine .well-known discovery documents were found. api.commadotai.com,
+  comma.ai and billing.comma.ai return 404 for all probed paths. connect.comma.ai
+  and jwt.comma.ai return HTTP 200 for every /.well-known/* path but the body is
+  the single-page-app index.html (Content-Type text/html), i.e. a catch-all route
+  and NOT a real discovery document — these are recorded as spa-catchall, not saved.
+  No apis.yml WellKnown pointer is emitted because nothing genuine was located.
+hosts:
+- host: https://api.commadotai.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://comma.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+- host: https://billing.comma.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+- host: https://connect.comma.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 200, note: spa-catchall}
+  - {path: /.well-known/openid-configuration, status: 200, note: spa-catchall}
+- host: https://jwt.comma.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 200, note: spa-catchall}
+  - {path: /.well-known/openid-configuration, status: 200, note: spa-catchall}

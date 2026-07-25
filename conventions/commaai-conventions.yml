@@ -1,0 +1,54 @@
+generated: '2026-07-18'
+method: searched
+source: https://api.comma.ai
+authentication:
+  style: jwt-bearer
+  header: 'Authorization: JWT {token}'
+  token_issuer: https://jwt.comma.ai
+  ref: authentication/commaai-authentication.yml
+versioning:
+  style: uri-path
+  observed_versions:
+  - v1
+  - v1.1
+  - v1.4
+  - v2
+  notes: >-
+    Version is embedded in the URL path and varies per resource family
+    (e.g. /v1/me/, /v1.1/devices/, /v2/pilotpair/, /v1.4/{dongle_id}/upload_url/).
+    There is no global API version header.
+serialization:
+  request: application/json
+  response: application/json
+identifiers:
+  dongle_id: >-
+    Per-device identifier (dongle id) used across device, route, segment,
+    navigation and athena endpoints.
+  route_name: Route identifier of the form {dongle_id}|{timestamp} for routes and segments.
+real_time:
+  athena:
+    transport: websocket
+    protocol: json-rpc
+    url: wss://athena.comma.ai:8765/{dongle_id}
+    offline_queue: GET /v1/devices/{dongle_id}/athena_offline_queue
+media:
+  video:
+    protocol: hls
+    host: https://video.comma.ai/hls/
+  signed_urls: >-
+    GPS paths, JPEG frames, upload URLs and events are returned as short-lived
+    signed URLs rather than streamed inline.
+idempotency:
+  supported: false
+  notes: No documented idempotency-key mechanism.
+pagination:
+  documented: false
+error_envelope:
+  ref: null
+  notes: No published problem+json / structured error catalog located in the API docs.
+rate_limiting:
+  documented: false
+cross_links:
+  authentication: authentication/commaai-authentication.yml
+  lifecycle: lifecycle/commaai-lifecycle.yml
+  data_model: data-model/commaai-data-model.yml

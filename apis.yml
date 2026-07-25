@@ -1,22 +1,132 @@
 aid: commaai
 name: Comma.ai
-description: Comma.ai is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Comma.ai builds openpilot, an open-source driver-assistance / robotics operating
+  system that runs on comma hardware (comma 3X, comma four) and upgrades adaptive
+  cruise control and lane centering on 300+ supported cars. Alongside the open-source
+  stack, comma operates the comma connect cloud platform and a documented JWT-authenticated
+  REST API (api.commadotai.com) that exposes device management, driving routes and
+  segments, video and log access, real-time device communication via athena, comma
+  prime billing, and turn-by-turn navigation. Backed by a16z, comma also publishes
+  large open driving datasets (comma2k19, commaVQ) and the opendbc "Python API for
+  your car." This profile catalogs comma's public developer surface for the API
+  Evangelist network.
 url: https://raw.githubusercontent.com/api-evangelist/commaai/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-public-developer-surface
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://github.com/commaai.png
 tags:
 - Company
-apis: []
+- Automotive
+- Self-Driving
+- Robotics
+- Artificial Intelligence
+- Machine Learning
+- Open Source
+- Connected Vehicles
+- Telematics
+- Developer API
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: commaai:comma-connect-api
+  name: comma connect API
+  humanURL: https://api.comma.ai
+  baseURL: https://api.commadotai.com
+  tags:
+  - Devices
+  - Routes
+  - Navigation
+  - Telematics
+  - Billing
+  description: >-
+    The comma connect API is a JWT-authenticated REST API for comma / openpilot
+    users and devices. It exposes the authenticated user profile and device list,
+    per-device operations (info, location, stats, pairing, user access grants, boot
+    and crash logs), driving routes and segments with signed URLs to video, GPS
+    paths and events, real-time device communication over the athena JSON-RPC
+    websocket, comma prime subscription and payment management, and turn-by-turn
+    navigation (destinations and saved locations). Tokens are minted at jwt.comma.ai
+    and passed as `Authorization: JWT {token}`.
+  properties:
+  - url: https://api.comma.ai
+    type: APIReference
+  - url: https://api.comma.ai
+    type: Documentation
+  - url: https://jwt.comma.ai
+    type: Authentication
+common:
+- type: DomainSecurity
+  url: security/commaai-domain-security.yml
+- type: DeveloperPortal
+  url: https://api.comma.ai
+- type: Documentation
+  url: https://docs.comma.ai
+- type: APIReference
+  url: https://api.comma.ai
+- type: GettingStarted
+  url: https://comma.ai/setup
+- type: GitHubOrganization
+  url: https://github.com/commaai
+- type: Blog
+  url: https://blog.comma.ai
+- type: Support
+  url: https://comma.ai/support
+- type: Pricing
+  url: https://comma.ai/shop
+- type: TermsOfService
+  url: https://comma.ai/terms
+- type: PrivacyPolicy
+  url: https://comma.ai/terms
+- type: Login
+  url: https://connect.comma.ai
+- type: Website
+  url: https://comma.ai
+- type: Authentication
+  url: authentication/commaai-authentication.yml
+- type: Conventions
+  url: conventions/commaai-conventions.yml
+- type: Lifecycle
+  url: lifecycle/commaai-lifecycle.yml
+- type: DataModel
+  url: data-model/commaai-data-model.yml
+- type: Conformance
+  url: conformance/commaai-conformance.yml
+- type: ChangeLog
+  url: changelog/commaai-changelog.yml
+- type: MCPServer
+  url: mcp/commaai-mcp.yml
+  name: comma connect (candidate)
+- type: LLMsTxt
+  url: llms/commaai-llms.txt
+- type: Packages
+  url: packages/commaai-packages.yml
+- type: SDKs
+  url: packages/commaai-packages.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

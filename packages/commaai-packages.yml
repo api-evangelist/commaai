@@ -1,0 +1,38 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/commaai and https://pypi.org/project/opendbc/
+packages:
+- language: python
+  registry: pypi
+  name: opendbc
+  version: 0.3.1
+  url: https://pypi.org/project/opendbc/
+  repo: https://github.com/commaai/opendbc
+  install: pip install opendbc
+  description: A Python API for your car — CAN bus DBC definitions and vehicle
+    interface used by openpilot.
+  official: true
+- language: python
+  registry: github
+  name: openpilot
+  url: https://github.com/commaai/openpilot
+  install: git clone https://github.com/commaai/openpilot
+  description: Open-source robotics operating system that upgrades driver
+    assistance on 300+ supported cars (MIT).
+  official: true
+- language: c
+  registry: github
+  name: panda
+  url: https://github.com/commaai/panda
+  install: git clone https://github.com/commaai/panda
+  description: Firmware and Python library for the comma panda universal car
+    interface (OBD-II / CAN).
+  official: true
+- language: javascript
+  registry: github
+  name: connect
+  url: https://github.com/commaai/connect
+  install: git clone https://github.com/commaai/connect
+  description: openpilot management web interface (connect.comma.ai) client
+    source.
+  official: true

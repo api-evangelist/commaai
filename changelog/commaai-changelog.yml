@@ -1,0 +1,41 @@
+generated: '2026-07-18'
+method: searched
+source: https://blog.comma.ai/llms.txt
+scheme: semver
+subject: openpilot
+notes: >-
+  comma does not publish a dedicated API changelog; the openpilot product ships
+  numbered releases announced on the comma blog. Recent release posts captured
+  below (most recent first). Non-release blog posts omitted.
+current_version: 0.11.1
+entries:
+- version: 0.11.1
+  url: https://blog.comma.ai/0111release/
+  highlights: Driver monitoring improvements.
+- version: '0.11'
+  url: https://blog.comma.ai/011release/
+  highlights: First robotics agent fully trained in a learned simulation.
+- version: 0.10.3
+  url: https://blog.comma.ai/0103release/
+  highlights: New driving and driver monitoring models.
+- version: 0.10.1
+  url: https://blog.comma.ai/0101release/
+  highlights: New driving model, new DM model, brand new UI.
+- version: '0.10'
+  url: https://blog.comma.ai/010release/
+  highlights: Move from the 0.9 series to the 0.10 series.
+- version: 0.9.9
+  url: https://blog.comma.ai/099release/
+  highlights: New driving model, live lateral lag learning, Tesla support.
+- version: 0.9.8
+  url: https://blog.comma.ai/098release/
+  highlights: Gas gating, 300+ supported cars, Rivian R1T/R1S and Ford F-150 support.
+- version: 0.9.7
+  url: https://blog.comma.ai/097release/
+  highlights: New driving model, better e2e DM, many car improvements.
+- version: 0.9.6
+  url: https://blog.comma.ai/096release/
+  highlights: New driving and DM models, neural steering controls, comma body streaming.
+- version: 0.9.5
+  url: https://blog.comma.ai/095release/
+  highlights: New driving model architecture, improved navigate on openpilot, full e2e lateral planning.

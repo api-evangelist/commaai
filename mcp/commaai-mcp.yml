@@ -1,0 +1,47 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: https://api.comma.ai
+notes: >-
+  No official comma-hosted or npm-published MCP server was found. This is a
+  candidate tool surface derived from the documented comma connect API operations,
+  so an agent could be wired to the JWT-authenticated REST API. Not published by comma.
+server:
+  name: comma-connect
+  transport: http
+  url: null
+  auth: 'JWT bearer (Authorization: JWT {token}) from jwt.comma.ai'
+tools:
+- name: get_me
+  description: Get the authenticated user profile.
+  source_operation: 'GET /v1/me/'
+- name: list_my_devices
+  description: List devices owned by the authenticated user.
+  source_operation: 'GET /v1/me/devices/'
+- name: get_device
+  description: Get information about a device.
+  source_operation: 'GET /v1.1/devices/{dongle_id}/'
+- name: get_device_location
+  description: Get the current location of a device.
+  source_operation: 'GET /v1/devices/{dongle_id}/location'
+- name: get_device_stats
+  description: Get driving statistics for a device.
+  source_operation: 'GET /v1.1/devices/{dongle_id}/stats'
+- name: list_device_segments
+  description: List recorded segments for a device.
+  source_operation: 'GET /v1/devices/{dongle_id}/segments'
+- name: get_route
+  description: Get information about a route.
+  source_operation: 'GET /v1/route/{route_name}/'
+- name: list_route_files
+  description: List files (video, GPS, events) for a route.
+  source_operation: 'GET /v1/route/{route_name}/files'
+- name: get_prime_subscription
+  description: Get comma prime subscription status for a device.
+  source_operation: 'GET /v1/prime/subscription'
+- name: set_navigation_destination
+  description: Set a navigation destination for a device.
+  source_operation: 'POST /v1/navigation/{dongle_id}/set_destination'
+- name: list_navigation_locations
+  description: List saved navigation locations for a device.
+  source_operation: 'GET /v1/navigation/{dongle_id}/locations'

@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: derived
+source: https://api.comma.ai
+notes: >-
+  Cross-cutting standards conformance derived from the documented comma connect
+  API surface. No OpenAPI is published, so assertions are based on the API docs.
+standards:
+- id: jwt-rfc7519
+  conforms: true
+  evidence: Authorization header carries a JSON Web Token (Authorization; JWT {token}).
+- id: json-rpc-2.0
+  conforms: true
+  evidence: athena device communication uses JSON-RPC over websocket.
+- id: hls
+  conforms: true
+  evidence: route video is served as HLS from video.comma.ai/hls/.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth 2.0 authorization-code flow or scopes documented; JWT bearer only.
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error envelope documented.
+- id: rfc8594-sunset
+  conforms: false

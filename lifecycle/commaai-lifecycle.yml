@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: https://api.comma.ai and https://blog.comma.ai
+versioning:
+  scheme: uri-path
+  observed_versions:
+  - v1
+  - v1.1
+  - v1.4
+  - v2
+  docs: https://api.comma.ai
+  notes: >-
+    Multiple path-versioned families coexist; no documented sunset or migration
+    policy for older versions was located.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No published deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+status_page: null
+status_page_notes: >-
+  No dedicated status page (e.g. status.comma.ai) was located; operational updates
+  are communicated via Discord (https://discord.comma.ai) and the blog.
+product_release_channel:
+  openpilot: https://blog.comma.ai
+  cadence: >-
+    openpilot ships numbered releases (e.g. 0.9.x, 0.10.x, 0.11.x) announced on
+    the comma blog; see changelog/commaai-changelog.yml.
+deprecated_operations: []
