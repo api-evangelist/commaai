@@ -1,0 +1,602 @@
+openapi: 3.2.0
+info:
+  title: Comma.ai API
+  version: derived-2026-08-10
+  description: Derived from Comma.ai's published documentation. Every operation in this document corresponds
+    to a literal HTTP method and path found in that documentation; nothing is inferred. Request and response
+    schemas are NOT described -- only the operations that are demonstrably documented.
+  x-provenance: derived-from-documentation
+  x-source-documentation: https://api.comma.ai
+  x-documentation-url: https://api.comma.ai
+  x-derived: '2026-08-10'
+  x-derivation-method: literal METHOD+path extraction from provider documentation; no pattern completion,
+    no inferred operations
+  x-not-a-provider-contract: This is API Evangelist's reading of the documentation, not a contract published
+    or endorsed by the provider.
+servers:
+- url: https://api.commadotai.com
+tags:
+- name: General
+paths:
+  /v1/me/:
+    get:
+      summary: Retrieve me
+      tags:
+      - General
+      operationId: get_v1_me
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L454
+      x-source-context: <p>GET /v1/me/</p>
+  /v1/me/devices/:
+    get:
+      summary: Retrieve devices
+      tags:
+      - General
+      operationId: get_v1_me_devices
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L512
+      x-source-context: <p>GET /v1/me/devices/</p>
+  /v1.1/devices/{dongle_id}/:
+    get:
+      summary: Retrieve dongle id
+      tags:
+      - General
+      operationId: get_v1_1_devices_dongle_id
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L691
+      x-source-context: <p>GET /v1.1/devices/:dongle_id/</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/:
+    patch:
+      summary: Update dongle id
+      tags:
+      - General
+      operationId: patch_v1_devices_dongle_id
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L843
+      x-source-context: <p>PATCH /v1/devices/:dongle_id/</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/location:
+    get:
+      summary: Retrieve location
+      tags:
+      - General
+      operationId: get_v1_devices_dongle_id_location
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L858
+      x-source-context: <p>GET /v1/devices/:dongle_id/location</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v2/pilotpair/:
+    post:
+      summary: Create pilotpair
+      tags:
+      - General
+      operationId: post_v2_pilotpair
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L926
+      x-source-context: <p>POST https://api.commadotai.com/v2/pilotpair/</p>
+  /v1/devices/{dongle_id}/unpair:
+    post:
+      summary: Create unpair
+      tags:
+      - General
+      operationId: post_v1_devices_dongle_id_unpair
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L969
+      x-source-context: <p>POST /v1/devices/:dongle_id/unpair</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/add_user:
+    post:
+      summary: Create add user
+      tags:
+      - General
+      operationId: post_v1_devices_dongle_id_add_user
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L987
+      x-source-context: <p>POST /v1/devices/:dongle_id/add_user</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/del_user:
+    post:
+      summary: Create del user
+      tags:
+      - General
+      operationId: post_v1_devices_dongle_id_del_user
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1004
+      x-source-context: <p>POST /v1/devices/:dongle_id/del_user</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1.1/devices/{dongle_id}/stats:
+    get:
+      summary: Retrieve stats
+      tags:
+      - General
+      operationId: get_v1_1_devices_dongle_id_stats
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1021
+      x-source-context: <p>GET /v1.1/devices/:dongle_id/stats</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/users:
+    get:
+      summary: Retrieve users
+      tags:
+      - General
+      operationId: get_v1_devices_dongle_id_users
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1073
+      x-source-context: <p>GET /v1/devices/:dongle_id/users</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/bootlogs:
+    get:
+      summary: Retrieve bootlogs
+      tags:
+      - General
+      operationId: get_v1_devices_dongle_id_bootlogs
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1118
+      x-source-context: <p>GET /v1/devices/:dongle_id/bootlogs</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/crashlogs:
+    get:
+      summary: Retrieve crashlogs
+      tags:
+      - General
+      operationId: get_v1_devices_dongle_id_crashlogs
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1137
+      x-source-context: <p>GET /v1/devices/:dongle_id/crashlogs</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/segments:
+    get:
+      summary: Retrieve segments
+      tags:
+      - General
+      operationId: get_v1_devices_dongle_id_segments
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1156
+      x-source-context: <p>GET /v1/devices/:dongle_id/segments</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/route/{route_name}/:
+    get:
+      summary: Retrieve route name
+      tags:
+      - General
+      operationId: get_v1_route_route_name
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1377
+      x-source-context: <p>GET /v1/route/:route_name/</p>
+      parameters:
+      - name: route_name
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/route/{route_name}/segments:
+    get:
+      summary: Retrieve segments
+      tags:
+      - General
+      operationId: get_v1_route_route_name_segments
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1561
+      x-source-context: <p>GET /v1/route/:route_name/segments</p>
+      parameters:
+      - name: route_name
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/route/{route_name}/files:
+    get:
+      summary: Retrieve files
+      tags:
+      - General
+      operationId: get_v1_route_route_name_files
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1755
+      x-source-context: <p>GET /v1/route/:route_name/files</p>
+      parameters:
+      - name: route_name
+        in: path
+        required: true
+        schema:
+          type: string
+  /hls/{dongle_id}/{route_signature}/index.m3u8:
+    get:
+      summary: Retrieve index.m3u8
+      tags:
+      - General
+      operationId: get_hls_dongle_id_route_signature_index_m3u8
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1803
+      x-source-context: <p>GET /hls/:dongle_id/:route_signature/index.m3u8</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: route_signature
+        in: path
+        required: true
+        schema:
+          type: string
+  /hls/{dongle_id}/{route_signature}/dcamera/index.m3u8:
+    get:
+      summary: Retrieve index.m3u8
+      tags:
+      - General
+      operationId: get_hls_dongle_id_route_signature_dcamera_index_m3u8
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L1844
+      x-source-context: <p>GET /hls/:dongle_id/:route_signature/dcamera/index.m3u8</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: route_signature
+        in: path
+        required: true
+        schema:
+          type: string
+  /v2/pilotauth/:
+    post:
+      summary: Create pilotauth
+      tags:
+      - General
+      operationId: post_v2_pilotauth
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2018
+      x-source-context: <p>POST https://api.commadotai.com/v2/pilotauth/</p>
+  /v1.4/{dongle_id}/upload_url/:
+    get:
+      summary: Retrieve upload url
+      tags:
+      - General
+      operationId: get_v1_4_dongle_id_upload_url
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2080
+      x-source-context: <p>GET /v1.4/:dongle_id/upload_url/</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/{dongle_id}/upload_urls/:
+    post:
+      summary: Create upload urls
+      tags:
+      - General
+      operationId: post_v1_dongle_id_upload_urls
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2127
+      x-source-context: <p>POST  /v1/:dongle_id/upload_urls/</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /{dongle_id}:
+    post:
+      summary: Create dongle id
+      tags:
+      - General
+      operationId: post_dongle_id
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2194
+      x-source-context: <p>POST /:dongle_id</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/devices/{dongle_id}/athena_offline_queue:
+    get:
+      summary: Retrieve athena offline queue
+      tags:
+      - General
+      operationId: get_v1_devices_dongle_id_athena_offline_queue
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2324
+      x-source-context: <p>GET /v1/devices/:dongle_id/athena_offline_queue</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/prime/subscription:
+    get:
+      summary: Retrieve subscription
+      tags:
+      - General
+      operationId: get_v1_prime_subscription
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2351
+      x-source-context: <p>GET /v1/prime/subscription</p>
+  /v1/prime/pay:
+    post:
+      summary: Create pay
+      tags:
+      - General
+      operationId: post_v1_prime_pay
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2440
+      x-source-context: <p>POST /v1/prime/pay</p>
+  /v1/prime/payment_source:
+    get:
+      summary: Retrieve payment source
+      tags:
+      - General
+      operationId: get_v1_prime_payment_source
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2509
+      x-source-context: <p>GET /v1/prime/payment_source</p>
+    post:
+      summary: Create payment source
+      tags:
+      - General
+      operationId: post_v1_prime_payment_source
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2570
+      x-source-context: <p>POST /v1/prime/payment_source</p>
+  /v1/prime/cancel:
+    post:
+      summary: Create cancel
+      tags:
+      - General
+      operationId: post_v1_prime_cancel
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2655
+      x-source-context: <p>POST /v1/prime/cancel</p>
+  /v1/navigation/{dongle_id}/set_destination:
+    post:
+      summary: Create set destination
+      tags:
+      - General
+      operationId: post_v1_navigation_dongle_id_set_destination
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2684
+      x-source-context: <p>POST /v1/navigation/:dongle_id/set_destination</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/navigation/0375fdf7b1ce594d/set_destination:
+    post:
+      summary: Create set destination
+      tags:
+      - General
+      operationId: post_v1_navigation_0375fdf7b1ce594d_set_destination
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2690
+      x-source-context: <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span
+        class="nt">-X</span> POST https://api.commadotai.com/v1/navigation/0375fdf7b1ce59
+  /v1/navigation/{dongle_id}/next:
+    get:
+      summary: Retrieve next
+      tags:
+      - General
+      operationId: get_v1_navigation_dongle_id_next
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2757
+      x-source-context: <p>GET /v1/navigation/:dongle_id/next</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/navigation/{dongle_id}/locations:
+    get:
+      summary: Retrieve locations
+      tags:
+      - General
+      operationId: get_v1_navigation_dongle_id_locations
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2803
+      x-source-context: <p>GET /v1/navigation/:dongle_id/locations</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Update locations
+      tags:
+      - General
+      operationId: put_v1_navigation_dongle_id_locations
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2873
+      x-source-context: <p>PUT /v1/navigation/:dongle_id/locations</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update locations
+      tags:
+      - General
+      operationId: patch_v1_navigation_dongle_id_locations
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2931
+      x-source-context: <p>PATCH /v1/navigation/:dongle_id/locations</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete locations
+      tags:
+      - General
+      operationId: delete_v1_navigation_dongle_id_locations
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2933
+      x-source-context: <p>DELETE /v1/navigation/:dongle_id/locations</p>
+      parameters:
+      - name: dongle_id
+        in: path
+        required: true
+        schema:
+          type: string
+  /v1/navigation/0375fdf7b1ce594d/locations:
+    put:
+      summary: Update locations
+      tags:
+      - General
+      operationId: put_v1_navigation_0375fdf7b1ce594d_locations
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2877
+      x-source-context: <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span
+        class="nt">-X</span> PUT https://api.commadotai.com/v1/navigation/0375fdf7b1ce594
+    patch:
+      summary: Update locations
+      tags:
+      - General
+      operationId: patch_v1_navigation_0375fdf7b1ce594d_locations
+      responses:
+        '200':
+          description: Successful response
+      x-source-documentation: https://api.comma.ai#L2937
+      x-source-context: <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span
+        class="nt">-X</span> PATCH https://api.commadotai.com/v1/navigation/0375fdf7b1ce5
