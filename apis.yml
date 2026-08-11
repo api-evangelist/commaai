@@ -62,14 +62,12 @@ apis:
   - Telematics
   - Billing
   description: >-
-    The comma connect API is a JWT-authenticated REST API for comma / openpilot
-    users and devices. It exposes the authenticated user profile and device list,
-    per-device operations (info, location, stats, pairing, user access grants, boot
-    and crash logs), driving routes and segments with signed URLs to video, GPS
-    paths and events, real-time device communication over the athena JSON-RPC
-    websocket, comma prime subscription and payment management, and turn-by-turn
-    navigation (destinations and saved locations). Tokens are minted at jwt.comma.ai
-    and passed as `Authorization: JWT {token}`.
+    The comma connect API is a JWT-authenticated REST API for comma / openpilot users and devices. It
+    exposes the authenticated user profile and device list, per-device operations (info, location, stats,
+    pairing, user access grants, boot and crash logs), driving routes and segments with signed URLs to
+    video, GPS paths and events, real-time device communication over the athena JSON-RPC websocket, comma
+    prime subscription and payment management, and turn-by-turn navigation (destinations and saved locations).
+    Tokens are minted at jwt.comma.ai and passed as `Authorization: JWT {token}`.
   properties:
   - url: https://api.comma.ai
     type: APIReference
@@ -77,6 +75,16 @@ apis:
     type: Documentation
   - url: https://jwt.comma.ai
     type: Authentication
+- aid: commaai:commaai-general-api
+  name: Comma.ai General API
+  description: The General API from Comma.ai — 33 operation(s) for general.
+  humanURL: https://api.comma.ai
+  baseURL: https://api.commadotai.com
+  tags:
+  - General
+  properties:
+  - type: OpenAPI
+    url: openapi/commaai-general-api-openapi.yml
 common:
 - type: DomainSecurity
   url: security/commaai-domain-security.yml
