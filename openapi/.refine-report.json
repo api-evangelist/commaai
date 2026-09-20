@@ -1,0 +1,18 @@
+{
+  "provider": "commaai",
+  "sources": [
+    "commaai-derived-openapi.yml"
+  ],
+  "outputs": [
+    "commaai-general-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/commaai-derived-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "apis.yml register: written (+1 apis, 2 total)"
+  ],
+  "skipped": []
+}
