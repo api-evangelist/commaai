@@ -52,8 +52,8 @@ tags:
 - Self-Driving
 - Robotics
 - Artificial Intelligence
-- Machine-Learning
-- Open-Source
+- Machine Learning
+- Open Source
 - Connected Vehicles
 - Telematics
 - Developer API
@@ -68,6 +68,8 @@ tags_raw:
 - Connected Vehicles
 - Telematics
 - Developer API
+- Machine-Learning
+- Open-Source
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
